@@ -1,3 +1,5 @@
+import KayakItem from './components/kayak-item/kayak-item.component';
+
 import './kayaks.styles.scss'
 
 const App = () => {
@@ -37,19 +39,8 @@ const App = () => {
 
   return (
     <div className="kayaks-container">
-      {kayaks.map(({id, title, places, imageUrl}) => (
-        <div key={id} className="kayak-container">
-          <div 
-            className="background-image" 
-            style={{
-              backgroundImage: `url(${imageUrl})`
-            }} 
-          />
-            <div className="kayak-body-container">
-              <h2>{title} ({places}p)</h2>
-              <p>Reserveer nu</p>
-            </div>      
-        </div>
+      {kayaks.map((kayak) => (
+        <KayakItem key={kayak.id} kayak={kayak} />
       ))}
     </div>
   );
