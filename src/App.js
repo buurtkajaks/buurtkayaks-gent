@@ -1,6 +1,5 @@
-import KayakItem from './components/kayak-item/kayak-item.component';
+import Directory from "./components/directory/directory.component"
 
-import './kayaks.styles.scss'
 
 const App = () => {
 
@@ -38,11 +37,7 @@ const App = () => {
   ];
 
   return (
-    <div className="kayaks-container">
-      {kayaks.map((kayak) => (
-        <KayakItem key={kayak.id} kayak={kayak} />
-      ))}
-    </div>
+    <Directory kayaks={kayaks} />
   );
 }
 
