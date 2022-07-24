@@ -5,6 +5,8 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
+import FormInput from '../form-input/form-input.component';
+
 const defaultFormFields = {
   displayName: '',
   email: '',
@@ -55,8 +57,8 @@ const SignUpForm = () => {
     <div>
       <h1>Sign up with your email and password</h1>
       <form onSubmit={handleSubmit}>
-        <label>Naam</label>
-        <input
+        <FormInput
+          label="Naam"
           type="text"
           required
           onChange={handleChange}
@@ -64,8 +66,8 @@ const SignUpForm = () => {
           value={displayName}
         />
 
-        <label>Email</label>
-        <input
+        <FormInput
+          label="Email"
           type="email"
           required
           onChange={handleChange}
@@ -73,8 +75,8 @@ const SignUpForm = () => {
           value={email}
         />
 
-        <label>Paswoord</label>
-        <input
+        <FormInput
+          label="Paswoord"
           type="password"
           required
           onChange={handleChange}
@@ -82,8 +84,8 @@ const SignUpForm = () => {
           value={password}
         />
 
-        <label>Bevestig paswoord</label>
-        <input
+        <FormInput
+          label="Bevestig paswoord"
           type="password"
           required
           onChange={handleChange}
