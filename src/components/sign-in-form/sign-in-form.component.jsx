@@ -39,7 +39,18 @@ const SignInForm = () => {
       );
       console.log(response);
       resetFormFields();
-    } catch (error) {}
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+          alert('Paswoord is niet correct');
+          break;
+        case 'auth/user-not-found':
+          alert('Gebruiker bestaat niet');
+          break;
+        default:
+          console.log(error);
+      }
+    }
   };
 
   const handleChange = (event) => {
@@ -72,10 +83,9 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           <Button type="submit">Log in</Button>
-          <Button buttonType="google" onClick={signInWithGoogle}>
+          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
             Google
           </Button>
-          <button onClick={signInWithGoogle}>Sign in with Google Popup</button>
         </div>
       </form>
     </div>
