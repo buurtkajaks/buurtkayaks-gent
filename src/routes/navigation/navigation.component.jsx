@@ -21,6 +21,9 @@ const Navigation = () => {
           <Link className="nav-link" to="/kayaks">
             KAYAKS
           </Link>
+          <Link className="nav-link" to="/checkout">
+            CHECKOUT
+          </Link>
           {currentUser ? (
             <span className="nav-link" onClick={signOutUser}>
               LOG UIT
