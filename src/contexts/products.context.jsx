@@ -19,13 +19,13 @@ export const ProductsProvider = ({ children }) => {
   // }, []);
 
   useEffect(() => {
-    const getCollecionMap = async () => {
-      const productsMap = await getCollectionAndDocuments();
+    const getCollectionMap = async () => {
+      const productsMap = await getCollectionAndDocuments('products');
       console.log(productsMap);
       setProductsMap(productsMap);
     };
 
-    getCollecionMap();
+    getCollectionMap();
   }, []);
 
   const value = { productsMap };
