@@ -20,9 +20,9 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     const getCollecionMap = async () => {
-      const collectionMap = await getCollectionAndDocuments();
-      console.log(collectionMap);
-      setProductsMap(collectionMap);
+      const productsMap = await getCollectionAndDocuments();
+      console.log(productsMap);
+      setProductsMap(productsMap);
     };
 
     getCollecionMap();
