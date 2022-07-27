@@ -18,7 +18,7 @@ const Navigation = () => {
           <KayakLogo className="logo" />
         </Link>
         <div className="nav-links-container">
-          <Link className="nav-link" to="/kayaks">
+          <Link className="nav-link" to="/products">
             KAYAKS
           </Link>
           <Link className="nav-link" to="/checkout">

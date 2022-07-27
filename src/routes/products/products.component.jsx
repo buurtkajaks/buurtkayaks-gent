@@ -2,20 +2,20 @@ import { useContext, Fragment } from 'react';
 
 import { ProductsContext } from '../../contexts/products.context';
 
-import KayakCard from '../../components/kayak-card/kayak-card.component';
+import ProductCard from '../../components/product-card/product-card.component';
 
-import './kayaks.styles.scss';
+import './products.styles.scss';
 
-const Kayaks = () => {
+const Products = () => {
   const { productsMap } = useContext(ProductsContext);
   return (
     <Fragment>
       {Object.keys(productsMap).map((title) => (
         <Fragment key={title}>
           <h2>{title}</h2>
-          <div className="kayaks-container">
-            {productsMap[title].map((kayak) => (
-              <KayakCard id={kayak.id} kayak={kayak} />
+          <div className="products-container">
+            {productsMap[title].map((product) => (
+              <ProductCard id={product.id} product={product} />
             ))}
           </div>
         </Fragment>
@@ -24,4 +24,4 @@ const Kayaks = () => {
   );
 };
 
-export default Kayaks;
+export default Products;

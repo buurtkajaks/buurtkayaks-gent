@@ -1,19 +1,19 @@
-import './kayak-card.styles.scss';
+import './product-card.styles.scss';
 
 import Button from '../button/button.component';
 
-const KayakCard = ({ kayak }) => {
-  const { name, places, imageUrl } = kayak;
+const ProductCard = ({ product }) => {
+  const { name, places, imageUrl } = product;
   return (
-    <div className="kayak-card-container">
+    <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
       <div className="footer">
         <span className="name">{name}</span>
         <span className="places">{places}</span>
       </div>
-      <Button buttonType="inverted">Reserveer kayak</Button>
+      <Button buttonType="inverted">Reserveer nu</Button>
     </div>
   );
 };
 
-export default KayakCard;
+export default ProductCard;
