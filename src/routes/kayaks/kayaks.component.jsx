@@ -4,6 +4,8 @@ import { KayaksContext } from '../../contexts/kayaks.context';
 
 import KayakCard from '../../components/kayak-card/kayak-card.component';
 
+import 
+
 import './kayaks.styles.scss';
 
 const Kayaks = () => {
