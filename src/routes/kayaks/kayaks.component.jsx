@@ -1,20 +1,18 @@
 import { useContext } from 'react';
 
-import { KayaksContext } from '../../contexts/kayaks.context';
+import { ProductsContext } from '../../contexts/products.context';
 
 import KayakCard from '../../components/kayak-card/kayak-card.component';
 
 import './kayaks.styles.scss';
 
 const Kayaks = () => {
-  const { kayaks } = useContext(KayaksContext);
-  return (
-    <div className="kayaks-container">
-      {kayaks.map((kayak) => (
-        <KayakCard id={kayak.id} kayak={kayak} />
-      ))}
-    </div>
-  );
+  const {} = useContext(ProductsContext);
+  return <div className="kayaks-container"></div>;
 };
 
 export default Kayaks;
+
+// {kayaks.map((kayak) => (
+//   <KayakCard id={kayak.id} kayak={kayak} />
+// ))}

@@ -6,7 +6,7 @@ import './index.scss';
 
 import App from './App';
 import { UserProvider } from './contexts/user.context';
-import { KayaksProvider } from './contexts/kayaks.context';
+import { ProductsProvider } from './contexts/products.context';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -15,9 +15,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <KayaksProvider>
+        <ProductsProvider>
           <App />
-        </KayaksProvider>
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -6,12 +6,12 @@ import { getCollectionAndDocuments } from '../utils/firebase/firebase.utils';
 // import PRODUCT_DATA from '../product-data';
 // import { addCollectionAndDocuments } from '../utils/firebase/firebase.utils';
 
-export const KayaksContext = createContext({
-  kayaks: [],
+export const ProductsContext = createContext({
+  productsMap: {},
 });
 
-export const KayaksProvider = ({ children }) => {
-  const [kayaks, setKayaks] = useState([]);
+export const ProductsProvider = ({ children }) => {
+  const [productsMap, setProductsMap] = useState({});
 
   // enable this to initialize the products collection in firestore
   // useEffect(() => {
@@ -22,13 +22,16 @@ export const KayaksProvider = ({ children }) => {
     const getCollecionMap = async () => {
       const collectionMap = await getCollectionAndDocuments();
       console.log(collectionMap);
+      setProductsMap(collectionMap);
     };
 
     getCollecionMap();
-  });
+  }, []);
 
-  const value = { kayaks };
+  const value = { productsMap };
   return (
-    <KayaksContext.Provider value={value}> {children} </KayaksContext.Provider>
+    <ProductsContext.Provider value={value}>
+      {children}
+    </ProductsContext.Provider>
   );
 };
