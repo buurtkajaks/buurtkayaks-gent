@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 
+import { getCollectionAndDocuments } from '../utils/firebase/firebase.utils';
+
 // enable this to initialize the products collection in firestore
 // import PRODUCT_DATA from '../product-data';
 // import { addCollectionAndDocuments } from '../utils/firebase/firebase.utils';
@@ -15,6 +17,15 @@ export const KayaksProvider = ({ children }) => {
   // useEffect(() => {
   //   addCollectionAndDocuments('products', PRODUCT_DATA);
   // }, []);
+
+  useEffect(() => {
+    const getCollecionMap = async () => {
+      const collectionMap = await getCollectionAndDocuments();
+      console.log(collectionMap);
+    };
+
+    getCollecionMap();
+  });
 
   const value = { kayaks };
   return (
